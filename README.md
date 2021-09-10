@@ -13,18 +13,16 @@ It's inspired by :
 
 - [march 25, 2019, zhuchcn.github.io: Modularize your shiny app using shiny module and R6 class](https://zhuchcn.github.io/projects/posts/en/2019-03-25/), written by Chenghao Zhu,  but in his case the code is 100% OOP i.e. also in ui et server. In my case it's for reusability in my project in classic Shiny code.
 
-edit (read and applied at the beginning of my POC, but not linked yet):
 
 - [July 20, 2018, tbradley1013.github.io: Using global input values inside of R Shiny modules](https://tbradley1013.github.io/2018/07/20/r-shiny-modules--using-global-inputs/), written by Tyler Bradley, where he made a demonstration to use `reactive(myreactive())` in the call of modules. 
 
-/edit
+
 
 For the two last questions:
 
 - 3 : I think there is not issue about nested module, in my example at least. If I understood the question.
 - 4 : I've looking for static function at the beginning for UI side, because of the instanciation too late in the server side. But except the root of my UIs R6 class, which could be in static or not in R6, all of my UIs R6 are in fact in the server side.
 
-edit2:
 
 code updated : `observeEvent(..[R6 module called]..., once=TRUE)` added, bugs fixed, hidden `textInput()` removed
 
