@@ -11,7 +11,7 @@ Here is a reprex that I've done in classic Shiny code calling R6 modules in two 
 
 It's inspired by : 
 
-- [march 25, 2019, chenghaozhu.net: Modularize your shiny app using shiny module and R6 class](http://www.chenghaozhu.net/posts/en/2019-03-25/), written by Chenghao Zhu,  but in his case the code is 100% OOP i.e. also in ui et server. In my case it's for reusability in my project in classic Shiny code.
+- [march 25, 2019, zhuchcn.github.io: Modularize your shiny app using shiny module and R6 class](https://zhuchcn.github.io/projects/posts/en/2019-03-25/), written by Chenghao Zhu,  but in his case the code is 100% OOP i.e. also in ui et server. In my case it's for reusability in my project in classic Shiny code.
 
 edit (read and applied at the beginning of my POC, but not linked yet):
 
@@ -27,6 +27,8 @@ For the two last questions:
 edit2:
 
 code updated : `observeEvent(..[R6 module called]..., once=TRUE)` added, bugs fixed, hidden `textInput()` removed
+
+### Code abstract
 
 __ui__ (please, look at view code on github :
 [RShinyR6PoC_ui_rshiny.R](https://github.com/philibe/RShinyR6POC/blob/main/ui_server_rshiny/ui_rshiny/RShinyR6PoC_ui_rshiny.R) )
