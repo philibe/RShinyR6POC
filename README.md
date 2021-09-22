@@ -1,7 +1,7 @@
 ## This POC is coming from StackOverflow post
 
 - question :  [Wrapping shiny modules in R6 classes](https://stackoverflow.com/questions/46693161/wrapping-shiny-modules-in-r6-classes)
-- my answer: [I am beginner in R6 and OOP. Here is areprex](https://stackoverflow.com/questions/46693161/wrapping-shiny-modules-in-r6-classes/57464394#57464394)
+- my answer: [I am beginner in R6 and OOP. Here is a reprex](https://stackoverflow.com/questions/46693161/wrapping-shiny-modules-in-r6-classes/57464394#57464394)
 
 ## My answer updated a little for github
 
