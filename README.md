@@ -175,3 +175,7 @@ MiniRapportTabDyn = R6Class(
     [...]
 )
 ```
+
+![](RShinyR6POC1.jpg)
+
+![](RShinyR6POC2.jpg)
