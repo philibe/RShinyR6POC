@@ -24,7 +24,7 @@ RShinyR6PoC_ui_rshiny<-
                                               .bsCollapsePanel-petite .panel-title {font-size:80%;}
                                               .bsCollapsePanel-petite .panel-heading {padding: 0px;}
                                               "))),
-    tabsetPanel(id = "tabs",
+    fluidPage(tabsetPanel(id = "tabs",
                 tabPanel("First Example", value="1",
                          h1("First Example"),
                          DT::dataTableOutput('MaitreTable'),
@@ -51,5 +51,5 @@ RShinyR6PoC_ui_rshiny<-
                            )
                          )
                 )
-    )
+    ))
   )

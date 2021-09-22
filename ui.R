@@ -22,7 +22,7 @@ source ("modules/RShinyR6PocUI_moduleR6.R", local = TRUE)
 BaseMiniRapportTabDynUI<-MiniRapportTabDynUI$new()
 BaseFicheTabGraphUI<-FicheTabGraphUI$new()
 
-source ("ui_server_rshiny/ui_rshiny/RShinyR6PoC_ui_rshiny.R", local = TRUE)
+source ("ui_server_rshiny/ui_rshiny/RShinyR6PoC_ui_rshiny.R", local = TRUE)  
 
 
 
