@@ -19,7 +19,7 @@ Global.Fiche.output.fct <- function (mydatatable) {
                       )
   )
 
-
+  res <- res %>%  formatRound.try.fct('end', 2)
 
   return (res)
 }
@@ -27,7 +27,6 @@ Global.Fiche.output.fct <- function (mydatatable) {
 
 Global.detail.synthese.table.output.fct <- function (mydatatable) {
   res<-DT::datatable( mydatatable,
-
                       style = "bootstrap",   class = "compact", filter='top',
                       selection = c("single"),
                       options = list(
@@ -35,13 +34,13 @@ Global.detail.synthese.table.output.fct <- function (mydatatable) {
                         scrollX=TRUE,   autoWidth = TRUE
                       )
   )
-
+  
   res <- (res
           %>% formatRound.try.fct('disp_calc', 2)
           %>% formatRound.try.fct('hp_calc', 2)
           %>% formatRound.try.fct('drat_calc', 2)
   )
-
+  
   return (res)
 }
 
@@ -82,40 +81,40 @@ pie_plot_plot.fct=function(pie){
     coord_fixed() +theme_no_axes() +
     scale_x_continuous(limits = c(-2, 2),  name = "", breaks = NULL, labels = NULL) +
     scale_y_continuous(limits = c(-1.5, 1.5),    name = "", breaks = NULL, labels = NULL)
-
-
+  
+  
 }
 
 pie_doubleplot_plot.fct=function(mydata){
-
+  
   mydata<-mydata
-
+  
   p0<-ggplot(mydata)+ ggtitle("Plot of length by dose") +
     coord_fixed() +theme_no_axes() +
     scale_x_continuous(limits = c(-2, 2),  # Adjust so labels are not cut off
                        name = "", breaks = NULL, labels = NULL) +
     scale_y_continuous(limits = c(-1.5, 1.5),      # Adjust so labels are not cut off
                        name = "", breaks = NULL, labels = NULL)
-
+  
   toto<-unlist(list(colorspace::qualitative_hcl(length(mydata$coul),"Dynamic"),
                     colorspace::qualitative_hcl(length(mydata$label),"Dark 3")))
-
-
+  
+  
   titi<-setNames(toto,unlist(list(mydata$coul,mydata$label)))
-
+  
   p1<-p0 +
     geom_arc_bar(aes(x0 = 0, y0 = 0, r0 = 0.6, r = 1,amount = amount,
                      fill = label,explode = focus),stat = 'pie') +
     labs(fill = "ratio")  +scale_fill_manual(values =titi)
-
-
+  
+  
   p2<-p0+
     geom_arc_bar(aes(x0 = 0, y0 = 0, r0 = 0, r = 0.5,amount = amount,
                      fill = coul,explode = focus),stat = 'pie',data=mydata) +
     labs(fill = "produit")+  scale_fill_manual(values =titi)
-
+  
   ptotal<-p0 +
-
+    
     geom_arc_bar(aes(x0 = 0, y0 = 0, r0 = 0, r = 0.5,amount = amount,
                      fill = coul,explode = focus),stat = 'pie',data=mydata) +
     geom_arc_bar(aes(x0 = 0, y0 = 0, r0 = 0.6, r = 1,amount = amount,
@@ -123,7 +122,7 @@ pie_doubleplot_plot.fct=function(mydata){
     scale_fill_manual(values = titi)+geom_text(aes(x = 1.05 * sin(middle), y = 1.05 * cos(middle),
                                                    label = label, hjust = hjust, vjust = vjust
     ))
-
+  
   plot_grid(ptotal+ theme(legend.position = "none"),
             plot_grid(
               get_legend(p1 + theme(legend.position = "right",plot.margin = unit(c(0,0,0,0), "cm"))),

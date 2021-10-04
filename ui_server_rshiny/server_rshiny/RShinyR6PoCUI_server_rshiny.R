@@ -5,7 +5,7 @@ FakeDatas <- reactive({
                TR=ifelse(cyl!=6,"NORM","TR")
     )
     %>% separate(rowname,c("marque","modele"), sep=" ", fill="right", extra="merge")
-    %>% rename_at(vars(vector_calc),list(calc=~paste0(.,"_calc")) )
+    %>% rename_at(vars(all_of(vector_calc)),list(calc=~paste0(.,"_calc")) )
     %>% select (marque, modele,everything())
     %>% select_at(vars(-contains("calc"),contains("calc")))
   )

@@ -26,7 +26,11 @@ library(stringr)
 
 
 source("Others_Functions.R")
-source ("modules/RShinyR6PocUI_moduleR6.R", local = TRUE)
+
+source ("modules/MiniRapportTabDynUI_moduleR6.R", local = TRUE)
+source ("modules/FicheGraphUI_moduleR6.R", local = TRUE)     
+source ("modules/FicheTabGraphUI_moduleR6.R", local = TRUE)
+
 
 
 shinyServer(function(input, output, session) {

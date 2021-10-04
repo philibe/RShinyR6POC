@@ -17,7 +17,9 @@ library(stringr)
 largeur_page_pct<-96
 
 source("Others_Functions.R")
-source ("modules/RShinyR6PocUI_moduleR6.R", local = TRUE)
+source ("modules/MiniRapportTabDynUI_moduleR6.R", local = TRUE)
+source ("modules/FicheTabGraphUI_moduleR6.R", local = TRUE) 
+
 
 BaseMiniRapportTabDynUI<-MiniRapportTabDynUI$new()
 BaseFicheTabGraphUI<-FicheTabGraphUI$new()
