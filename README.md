@@ -1,7 +1,7 @@
 ## This POC is coming from StackOverflow post
 
 - question :  [Wrapping shiny modules in R6 classes](https://stackoverflow.com/questions/46693161/wrapping-shiny-modules-in-r6-classes)
-- my answer in 2019: [I am beginner in R6 and OOP. Here is a reprex](https://stackoverflow.com/questions/46693161/wrapping-shiny-modules-in-r6-classes/57464394#57464394)
+- August 2019, my reprex proposal: [I am beginner in R6 and OOP. Here is a reprex](https://stackoverflow.com/questions/46693161/wrapping-shiny-modules-in-r6-classes/57464394#57464394)
 
 ## My answer updated a little for github
 
@@ -59,7 +59,7 @@ FicheGraph1
 [..]
 ```
 
-__Modules_R6_Examples.R__ (please, look at view code on github)
+__Modules_R6_Examples.R__ (please, look at view code [splited in 3 files on github](https://github.com/philibe/RShinyR6POC/tree/main/modules) )
 ```R
 #  called in UI
 FicheTabGraphUI = R6Class(
