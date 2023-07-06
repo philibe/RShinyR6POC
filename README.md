@@ -34,7 +34,7 @@ code updated : `observeEvent(..[R6 module called]..., once=TRUE)` added, bugs fi
     self$ns = NS(session$ns(id)) # was self$ns = NS(id)
 ```
 
-inspired by [SO: Access shiny module id within the modules server function](https://stackoverflow.com/questions/58736750/access-shiny-module-id-within-the-modules-server-function/58738377#58738377)
+`NS(session$ns(id))` inspired by [SO: Access shiny module id within the modules server function](https://stackoverflow.com/questions/58736750/access-shiny-module-id-within-the-modules-server-function/58738377#58738377)
 
 
 ### Code abstract
