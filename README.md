@@ -100,7 +100,7 @@ FicheTabGraph = R6Class(
     initialize = function(input,output, session,id,ListeTitres,ListeIdGraphs,DetailsTableIn,
                           DetailsTableInFormatOutput.Fct =NULL){
       self$id = id
-      self$ns = NS(id)
+      self$ns = NS(session$ns(id))
       self$SetListeTitres(ListeTitres)
       self$SetListeIdGraphs(ListeIdGraphs)
       self$DetailsTableInFormatOutput.Fct=function (mydatatable) {DT::datatable( mydatatable)}
@@ -124,7 +124,7 @@ FicheGraph = R6Class(
                           RatioTable.Fct,RatioPlot.Fct,cible
     ){
       self$id = id
-      self$ns = NS(id)
+      self$ns = NS(session$ns(id))
 
       self$SetDetailsTableIn(DetailsTableIn)
       callModule(private$RatioPlotSERVER, self$id,self$DetailsTableIn, RatioTable.Fct,RatioPlot.Fct,cible )
@@ -179,7 +179,7 @@ MiniRapportTabDyn = R6Class(
     # initializer
     initialize = function(input, output, session,id, tagParamFiltre=div()){
       self$id = id
-      self$ns = NS(id)
+      self$ns = NS(session$ns(id))
       callModule(self$MiniRapportTabDynSERVER, self$id, tagParamFiltre )
       self$ConsolidationFormatOutput.Fct=function (mydatatable) {DT::datatable( mydatatable)}
     },

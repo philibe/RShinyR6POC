@@ -11,7 +11,7 @@ FicheGraph = R6Class(
                           RatioTable.Fct,RatioPlot.Fct,cible
     ){
       self$id = id
-      self$ns = NS(id)
+      self$ns = NS(session$ns(id))
 
       self$SetDetailsTableIn(DetailsTableIn)
       callModule(private$RatioPlotSERVER, self$id,self$DetailsTableIn, RatioTable.Fct,RatioPlot.Fct,cible )

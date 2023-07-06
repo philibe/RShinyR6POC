@@ -27,7 +27,7 @@ MiniRapportTabDyn = R6Class(
     # initializer
     initialize = function(input, output, session,id, tagParamFiltre=div()){
       self$id = id
-      self$ns = NS(id)
+      self$ns = NS(session$ns(id))
       callModule(self$MiniRapportTabDynSERVER, self$id, tagParamFiltre )
       self$ConsolidationFormatOutput.Fct=function (mydatatable) {DT::datatable( mydatatable)}
     },

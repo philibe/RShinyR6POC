@@ -26,7 +26,7 @@ FicheTabGraph = R6Class(
     initialize = function(input,output, session,id,ListeTitres,ListeIdGraphs,DetailsTableIn,
                           DetailsTableInFormatOutput.Fct =NULL){
       self$id = id
-      self$ns = NS(id)
+      self$ns = NS(session$ns(id))
       self$SetListeTitres(ListeTitres)
       self$SetListeIdGraphs(ListeIdGraphs)
       self$DetailsTableInFormatOutput.Fct=function (mydatatable) {DT::datatable( mydatatable)}
