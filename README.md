@@ -26,6 +26,17 @@ For the two last questions:
 
 code updated : `observeEvent(..[R6 module called]..., once=TRUE)` added, bugs fixed, hidden `textInput()` removed
 
+*Edit July 6, 2023,for R6 sub module called in module, works also in module of 1st level of call:*
+
+```
+  initialize = function(){
+    ..
+    self$ns = NS(session$ns(id)) # was self$ns = NS(id)
+```
+
+inspired by [SO: Access shiny module id within the modules server function](https://stackoverflow.com/questions/58736750/access-shiny-module-id-within-the-modules-server-function/58738377#58738377)
+
+
 ### Code abstract
 
 __ui__ (please, look at view code on github :
