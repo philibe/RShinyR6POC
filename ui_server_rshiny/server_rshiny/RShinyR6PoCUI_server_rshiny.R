@@ -4,9 +4,9 @@ FakeDatas <- reactive({
     %>% mutate(rowname=rownames(.),
                TR=ifelse(cyl!=6,"NORM","TR")
     )
-    %>% separate(rowname,c("marque","modele"), sep=" ", fill="right", extra="merge")
+    %>% separate(rowname,c("brand","model"), sep=" ", fill="right", extra="merge")
     %>% rename_at(vars(all_of(vector_calc)),list(calc=~paste0(.,"_calc")) )
-    %>% select (marque, modele,everything())
+    %>% select (brand, model,everything())
     %>% select_at(vars(-contains("calc"),contains("calc")))
   )
 }
@@ -22,7 +22,7 @@ DetailsTable <-  reactive({
   )
 
   res<-  data.frame(stringsAsFactors = FALSE)
-  isolate(FakeDatas())%>% filter (marque==isolate(MaitreTable())[as.integer(input_appelant), ])
+  isolate(FakeDatas())%>% filter (brand==isolate(MaitreTable())[as.integer(input_appelant), ])
 
 })
 
@@ -77,8 +77,8 @@ observeEvent(DetailsTable_filled(),
                FirstExample$server(input, output, session,
                                    reactive(input$MaitreTable_rows_selected),
                                    reactive(consolidationDatas()) ,
-                                   list( c(1,"basic report (marque)","marque"),
-                                         c(2,"other report (marque,model)","marque,modele")),
+                                   list( c(1,"basic report (brand)","brand"),
+                                         c(2,"other report (brand,model)","brand,model")),
                                    Global.detail.synthese.table.output.fct
                )
              }
@@ -112,7 +112,7 @@ observeEvent(input$tabs,
 )
 MaitreTable <-  reactive({
 
-  unique(isolate(FakeDatas()) %>% select(marque)%>% arrange(marque))
+  unique(isolate(FakeDatas()) %>% select(brand)%>% arrange(brand))
 })
 
 

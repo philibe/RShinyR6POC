@@ -34,5 +34,5 @@ source ("modules/FicheTabGraphUI_moduleR6.R", local = TRUE)
 
 
 shinyServer(function(input, output, session) {
-  source ("ui_server_rshiny/server_rshiny/RShinyR6PoCUI_server_rshiny.R", local = TRUE)
+  source ("ui_server_rshiny/server_rshiny/RShinyR6PoCUI_server_rshiny.R", local = TRUE) 
 })
