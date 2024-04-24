@@ -1,6 +1,12 @@
 RShinyR6PoC_ui_rshiny<-
   fluidPage(
     useShinyjs(),
+    # fix 'Error: Unable to find "selectize-plugin-a11y"'
+    # - added: tags$head(htmltools::findDependencies(selectInput(..))
+    # - see https://github.com/rstudio/shiny/issues/3125#issuecomment-2072832820
+    tags$head(htmltools::findDependencies(selectInput("toto", "toto", choices=NULL))),
+    #
+    #
     # HTML(
     #   "
     #               <script>
